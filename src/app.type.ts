@@ -3,6 +3,7 @@ import {
   Request as ExpressRequest,
   Response as ExpressResponse,
 } from 'express';
+import { FirebaseConfig } from './core/firebase/firebase.type';
 
 /**
  * Application environment
@@ -23,6 +24,7 @@ export type AppConfig = {
 
 export type AllConfigType = AppConfig & {
   // Define for all config type
+  firebase: FirebaseConfig; // Firebase config module
 };
 
 export type Request = ExpressRequest & {

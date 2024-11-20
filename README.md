@@ -14,9 +14,30 @@ This boilerplate is a perfect starting point for building modern, efficient, and
 
 ## Project setup
 
+Copy the example environment configuration file to .env:
+
+```bash
+$ cp .env.example .env
+```
+
+Install all required Node.js packages:
+
 ```bash
 $ npm install
 ```
+
+### Environment
+
+```bash
+# Firebase
+FIREBASE_ADMIN_SDK = path/to/firebase-admin-sdk.json
+```
+
+### Environment Configuration Overview
+
+| **Name**             | **Description**                                                                                                                                           |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `FIREBASE_ADMIN_SDK` | The Firebase Admin SDK used for server-side interactions with Firebase services. Replace `your_firebase_admin_sdk_here` with your actual SDK credentials. |
 
 ## Compile and run the project
 
