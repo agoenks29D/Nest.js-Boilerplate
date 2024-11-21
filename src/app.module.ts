@@ -6,14 +6,24 @@ import {
   OnApplicationBootstrap,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import { MongooseModule } from '@nestjs/mongoose';
 import { CoreModule } from './core/core.module';
+import { Test, TestSchema } from './core/database/test.schema';
 import { AppController } from './app.controller';
 import { AppMiddleware } from './app.middleware';
 import { AppService } from './app.service';
 import { AppConfig } from './app.type';
 
 @Module({
-  imports: [CoreModule],
+  imports: [
+    CoreModule,
+    MongooseModule.forFeature([
+      {
+        name: Test.name,
+        schema: TestSchema,
+      },
+    ]),
+  ],
   controllers: [AppController],
   providers: [Logger, AppService],
 })

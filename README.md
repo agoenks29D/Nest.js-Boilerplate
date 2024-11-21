@@ -14,9 +14,30 @@ This boilerplate is a perfect starting point for building modern, efficient, and
 
 ## Project setup
 
+Copy the example environment configuration file to .env:
+
+```bash
+$ cp .env.example .env
+```
+
+Install all required Node.js packages:
+
 ```bash
 $ npm install
 ```
+
+### Environment
+
+```bash
+# Database
+DB_URI = mongodb://localhost/nest_development
+```
+
+### Environment Configuration Overview
+
+| **Name** | **Description**                                                |
+| -------- | -------------------------------------------------------------- |
+| `DB_URI` | The connection string used to connect to the MongoDB database. |
 
 ## Compile and run the project
 
