@@ -1,8 +1,10 @@
+import { join } from 'path';
 import { readFile } from 'fs/promises';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
+import nunjucks from 'nunjucks';
 import { AppModule } from './app.module';
 import { VALIDATION_PIPE_OPTIONS } from './app.config';
 
@@ -22,6 +24,21 @@ async function bootstrap() {
           }
         : undefined,
   });
+
+  /**
+   * Setup nunjucks
+   */
+  nunjucks.configure('src/views', {
+    autoescape: true,
+    express: app,
+    watch: true,
+  });
+
+  /**
+   * Set view engine & serve static files
+   */
+  app.setViewEngine('njk');
+  app.useStaticAssets(join(__dirname, '..', 'public'));
 
   /**
    * Enable shutdown hooks for graceful termination.

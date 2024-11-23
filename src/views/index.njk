@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<header class="container mx-auto py-8 px-4">
+    <div class="flex justify-between items-center">
+        <a href="#">
+            <img src="https://nestjs.com/img/logo-small.svg" alt="NestJS logo" class="h-8">
+        </a>
+        <nav class="flex space-x-6">
+            <a href="#" class="hover:text-gray-300">Documentation</a>
+            <a href="#" class="hover:text-gray-300">Enterprise</a>
+            <a href="#" class="hover:text-gray-300">Resources</a>
+        </nav>
+    </div>
+</header>
+<main class="container mx-auto py-8 px-4">
+    <h1 class="text-4xl font-bold mb-4">Hello, Nest!</h1>
+    <p class="text-lg my-4">
+        <code>
+            {{ serverInfo | dump(2) }}
+        </code>
+    </p>
+    <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Get Started</button>
+</main>
+<footer class="container mx-auto py-8 px-4">
+    <p class="text-lg">Copyright &copy; NestJS</p>
+</footer>
+{% endblock content %}

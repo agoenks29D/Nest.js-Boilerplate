@@ -14,6 +14,14 @@ This boilerplate is a perfect starting point for building modern, efficient, and
 
 ## Project setup
 
+Copy the example environment configuration file to .env:
+
+```bash
+$ cp .env.example .env
+```
+
+Install all required Node.js packages:
+
 ```bash
 $ npm install
 ```
